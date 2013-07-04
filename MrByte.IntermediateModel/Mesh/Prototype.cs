@@ -14,10 +14,9 @@
 // ========================================================================
 
 using System.Runtime.Serialization;
-using MrByte.IntermediateModel.Components;
 using MrByte.Math;
 
-namespace MrByte.IntermediateModel.Mesh
+namespace MrByte.RWX.Model.Mesh
 {
     [DataContract]
     public class Prototype : MeshGeometry

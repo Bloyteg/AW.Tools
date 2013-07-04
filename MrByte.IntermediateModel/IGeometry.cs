@@ -14,9 +14,9 @@
 // ========================================================================
 
 using System.Collections.Generic;
-using MrByte.IntermediateModel.Components;
+using MrByte.RWX.Model.Components;
 
-namespace MrByte.IntermediateModel
+namespace MrByte.RWX.Model
 {
     public interface IGeometry
     {

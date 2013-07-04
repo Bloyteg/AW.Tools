@@ -14,12 +14,9 @@
 // ========================================================================
 
 using System.Collections.Generic;
-using System.Linq;
 using System.Runtime.Serialization;
-using MrByte.Math;
-using MrByte.Math.Geometry;
 
-namespace MrByte.IntermediateModel.Components
+namespace MrByte.RWX.Model.Components
 {
     [DataContract]
     public class Face

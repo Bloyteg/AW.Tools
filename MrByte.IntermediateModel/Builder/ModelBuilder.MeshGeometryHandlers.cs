@@ -16,11 +16,11 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
-using MrByte.IntermediateModel.Components;
 using MrByte.Math;
 using MrByte.Math.Geometry;
+using MrByte.RWX.Model.Components;
 
-namespace MrByte.IntermediateModel.Builder
+namespace MrByte.RWX.Model.Builder
 {
     public partial class ModelBuilder
     {

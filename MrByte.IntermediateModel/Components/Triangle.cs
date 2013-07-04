@@ -13,14 +13,10 @@
 // limitations under the License.
 // ========================================================================
 
-using System;
-using System.Collections.Generic;
-using System.Linq;
 using System.Runtime.Serialization;
-using System.Text;
 using MrByte.Math;
 
-namespace MrByte.IntermediateModel.Components
+namespace MrByte.RWX.Model.Components
 {
     [DataContract]
     public class Triangle

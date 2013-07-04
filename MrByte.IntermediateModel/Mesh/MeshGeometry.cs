@@ -15,10 +15,10 @@
 
 using System.Collections.Generic;
 using System.Runtime.Serialization;
-using MrByte.IntermediateModel.Components;
-using MrByte.IntermediateModel.Primitive;
+using MrByte.RWX.Model.Components;
+using MrByte.RWX.Model.Primitive;
 
-namespace MrByte.IntermediateModel.Mesh
+namespace MrByte.RWX.Model.Mesh
 {
     /// <summary>
     /// Represents a complex geometry.

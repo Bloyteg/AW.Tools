@@ -16,7 +16,7 @@
 using System.Runtime.Serialization;
 using MrByte.Math;
 
-namespace MrByte.IntermediateModel
+namespace MrByte.RWX.Model
 {
     public interface ITransformable
     {

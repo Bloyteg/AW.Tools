@@ -13,15 +13,12 @@
 // limitations under the License.
 // ========================================================================
 
-using System;
 using System.Collections.Generic;
-using System.Linq;
 using System.Runtime.Serialization;
-using System.Text;
-using MrByte.IntermediateModel.Components;
 using MrByte.Math;
+using MrByte.RWX.Model.Components;
 
-namespace MrByte.IntermediateModel.Primitive
+namespace MrByte.RWX.Model.Primitive
 {
     [KnownType(typeof(Disc))]
     [DataContract]

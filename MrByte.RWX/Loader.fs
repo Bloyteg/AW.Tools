@@ -16,7 +16,7 @@
 namespace MrByte.RWX
 open MrByte.RWX.Parser
 open MrByte.RWX.Parser.AbstractSyntaxTree
-open MrByte.IntermediateModel.Builder
+open MrByte.RWX.Model.Builder
 open MrByte.Math
 open MrByte.FSharp.Helpers.Null
 

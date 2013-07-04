@@ -13,10 +13,9 @@
 // limitations under the License.
 // ========================================================================
 
-using System;
 using MrByte.Math;
 
-namespace MrByte.IntermediateModel.Builder
+namespace MrByte.RWX.Model.Builder
 {
 	public partial class ModelBuilder
     {

@@ -16,7 +16,7 @@
 using System;
 using System.Runtime.Serialization;
 
-namespace MrByte.IntermediateModel.Components
+namespace MrByte.RWX.Model.Components
 {
     [DataContract]
     public struct Color : IEquatable<Color>

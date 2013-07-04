@@ -14,9 +14,9 @@
 // ========================================================================
 
 using System;
-using MrByte.IntermediateModel.Primitive;
+using MrByte.RWX.Model.Primitive;
 
-namespace MrByte.IntermediateModel.Builder
+namespace MrByte.RWX.Model.Builder
 {
     public partial class ModelBuilder
     {

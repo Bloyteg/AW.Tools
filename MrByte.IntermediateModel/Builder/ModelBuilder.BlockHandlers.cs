@@ -15,11 +15,11 @@
 
 
 using System;
-using MrByte.IntermediateModel.Components;
-using MrByte.IntermediateModel.Mesh;
 using MrByte.Math;
+using MrByte.RWX.Model.Components;
+using MrByte.RWX.Model.Mesh;
 
-namespace MrByte.IntermediateModel.Builder
+namespace MrByte.RWX.Model.Builder
 {
     public partial class ModelBuilder
     {

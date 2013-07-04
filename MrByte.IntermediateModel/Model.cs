@@ -18,10 +18,10 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Runtime.Serialization;
-using MrByte.IntermediateModel.Components;
-using MrByte.IntermediateModel.Mesh;
+using MrByte.RWX.Model.Components;
+using MrByte.RWX.Model.Mesh;
 
-namespace MrByte.IntermediateModel
+namespace MrByte.RWX.Model
 {
     [DataContract]
     public enum AxisAlignment

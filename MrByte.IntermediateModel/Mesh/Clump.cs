@@ -13,11 +13,10 @@
 // limitations under the License.
 // ========================================================================
 
-using System.Collections.Generic;
 using System.Runtime.Serialization;
 using MrByte.Math;
 
-namespace MrByte.IntermediateModel.Mesh
+namespace MrByte.RWX.Model.Mesh
 {
     [DataContract(Name="Clump")]
     public class Clump : MeshGeometry, ITransformable

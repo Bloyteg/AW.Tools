@@ -15,10 +15,10 @@
 
 using System.Collections.Generic;
 using System.Runtime.Serialization;
-using MrByte.IntermediateModel.Components;
 using MrByte.Math;
+using MrByte.RWX.Model.Components;
 
-namespace MrByte.IntermediateModel.Primitive
+namespace MrByte.RWX.Model.Primitive
 {
     [KnownType(typeof(Cylinder))]
     [DataContract]

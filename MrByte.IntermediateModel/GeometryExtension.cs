@@ -15,10 +15,10 @@
 
 using System;
 using System.Linq;
-using MrByte.IntermediateModel.Components;
 using MrByte.Math;
+using MrByte.RWX.Model.Components;
 
-namespace MrByte.IntermediateModel
+namespace MrByte.RWX.Model
 {
     public static class GeometryExtension
     {
@@ -65,14 +65,14 @@ namespace MrByte.IntermediateModel
                     .Vertices[localVertex]
                     .Normal = normals.Aggregate(Tuple.Create(new Vector3(), 0.0),
                                                 (aggregate, faceNormal) =>
-                                                    {
-                                                        var angle = System.Math.Acos(Vector3.Dot(faceNormal.Vec1.Normalize(),
-                                                                                                 faceNormal.Vec2.Normalize()));
+                                                {
+                                                    var angle = System.Math.Acos(Vector3.Dot(faceNormal.Vec1.Normalize(),
+                                                                                             faceNormal.Vec2.Normalize()));
 
-                                                        return Tuple.Create(aggregate.Item1 + faceNormal.Normal*angle,
-                                                                            aggregate.Item2 + angle);
-                                                    },
-                                                resultTuple => (resultTuple.Item1/resultTuple.Item2).Normalize());
+                                                    return Tuple.Create(aggregate.Item1 + faceNormal.Normal * angle,
+                                                                        aggregate.Item2 + angle);
+                                                },
+                                                resultTuple => (resultTuple.Item1 / resultTuple.Item2).Normalize());
             }
         }
     }

@@ -8,8 +8,8 @@
     <ProjectGuid>{D0DE7E74-B546-4BD1-A4AC-F4DC4EB959AD}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>MrByte.IntermediateModel</RootNamespace>
-    <AssemblyName>MrByte.IntermediateModel</AssemblyName>
+    <RootNamespace>MrByte.RWX.Model</RootNamespace>
+    <AssemblyName>MrByte.RWX.Model</AssemblyName>
     <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <TargetFrameworkProfile />

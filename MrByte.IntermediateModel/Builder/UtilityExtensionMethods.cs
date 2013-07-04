@@ -15,7 +15,7 @@
 
 using System;
 
-namespace MrByte.IntermediateModel.Builder
+namespace MrByte.RWX.Model.Builder
 {
     static class UtilityExtensionMethods
     {

@@ -17,7 +17,7 @@ using System;
 using System.Runtime.Serialization;
 using MrByte.Utility;
 
-namespace MrByte.IntermediateModel.Components
+namespace MrByte.RWX.Model.Components
 {
     [DataContract]
     public enum GeometrySampling
