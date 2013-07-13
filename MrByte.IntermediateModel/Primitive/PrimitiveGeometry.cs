@@ -43,7 +43,7 @@ namespace MrByte.RWX.Model.Primitive
         /// Gets the vertices.
         /// </summary>
         /// <value>The vertices.</value>
-        [IgnoreDataMember]
+        [DataMember]
         public IList<Vertex> Vertices
         {
             get
@@ -66,7 +66,7 @@ namespace MrByte.RWX.Model.Primitive
         /// Gets the faces.
         /// </summary>
         /// <value>The faces.</value>
-        [IgnoreDataMember]
+        [DataMember]
         public ICollection<Face> Faces
         {
             get

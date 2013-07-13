@@ -102,7 +102,7 @@ namespace MrByte.RWX.Model.Primitive
         /// <value>
         /// The radius.
         /// </value>
-        [DataMember]
+        [IgnoreDataMember]
         public double Radius { get; set; }
 
         /// <summary>
@@ -111,7 +111,7 @@ namespace MrByte.RWX.Model.Primitive
         /// <value>
         /// The density.
         /// </value>
-        [DataMember]
+        [IgnoreDataMember]
         public int Density { get; set; }
     }
 }

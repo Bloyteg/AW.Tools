@@ -93,21 +93,21 @@ namespace MrByte.RWX.Model.Primitive
         /// Gets or sets the radius.
         /// </summary>
         /// <value>The radius.</value>
-        [DataMember]
+        [IgnoreDataMember]
         public double Radius { get; set; }
 
         /// <summary>
         /// Gets or sets the height.
         /// </summary>
         /// <value>The height.</value>
-        [DataMember]
+        [IgnoreDataMember]
         public double Height { get; set; }
 
         /// <summary>
         /// Gets or sets the sides.
         /// </summary>
         /// <value>The sides.</value>
-        [DataMember]
+        [IgnoreDataMember]
         public int Sides { get; set; }
     }
 }

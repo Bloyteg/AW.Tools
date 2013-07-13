@@ -14,6 +14,7 @@
 // ========================================================================
 
 using System;
+using System.Collections.Generic;
 using System.Runtime.Serialization;
 
 namespace MrByte.Math
@@ -30,51 +31,14 @@ namespace MrByte.Math
                                                 };
 
         [DataMember(Name="Matrix")]
-        private byte[] AsBytes
+        private IEnumerable<double> AsFlatEnumerable
         {
             get
-            { 
-                var outArray = new byte[_transformMatrix.Length*sizeof (double)];
-                int width = _transformMatrix.GetUpperBound(0);
-                int height = _transformMatrix.GetUpperBound(1);
-
-                int currentOffset = 0;
-                for(int row = 0; row < width; ++row)
-                {
-                    for(int column = 0; column < height; ++column)
-                    {
-                        BitConverter.GetBytes(_transformMatrix[row, column]).CopyTo(outArray, currentOffset);
-                        currentOffset += sizeof (double);
-                    }
-                }
-
-                return outArray;
-            }
-
-            set
             {
-                if(_transformMatrix == null)
+                foreach (var element in _transformMatrix)
                 {
-                    _transformMatrix = new double[4,4];
+                    yield return element;
                 }
-
-                int width = _transformMatrix.GetUpperBound(0);
-                int height = _transformMatrix.GetUpperBound(1);
-
-                int currentOffset = 0;
-                for (int row = 0; row < width; ++row)
-                {
-                    for (int column = 0; column < height; ++column)
-                    {
-                        _transformMatrix[row, column] = BitConverter.ToDouble(value, currentOffset);
-                        currentOffset += sizeof(double);
-                    }
-                }
-
-                _transformMatrix[3, 0] = 0;
-                _transformMatrix[3, 1] = 0;
-                _transformMatrix[3, 2] = 0;
-                _transformMatrix[3, 3] = 1;
             }
         }
 
