@@ -21,35 +21,18 @@ namespace MrByte.RWX.Model.Mesh
     [DataContract(Name="Clump")]
     public class Clump : MeshGeometry, ITransformable
     {
-        /// <summary>
-        /// Initializes a new instance of the <see cref="Clump"/> class.
-        /// </summary>
         public Clump()
         {
             Transform = new Matrix4();
             IsCollidable = true;
         }
 
-        /// <summary>
-        /// Gets or sets the tag.
-        /// </summary>
-        /// <value>The tag.</value>
         [DataMember]
         public int? Tag { get; set; }
 
-        /// <summary>
-        /// Gets or sets the origin.
-        /// </summary>
-        /// <value>The origin.</value>
         [DataMember]
         public Matrix4 Transform { get; set; }
 
-        /// <summary>
-        /// Gets or sets a value indicating whether this instance is collidable.
-        /// </summary>
-        /// <value>
-        /// 	<c>true</c> if this instance is collidable; otherwise, <c>false</c>.
-        /// </value>
         [DataMember]
         public bool IsCollidable { get; set; }
     }

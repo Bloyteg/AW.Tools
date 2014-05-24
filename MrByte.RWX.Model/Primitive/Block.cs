@@ -110,10 +110,6 @@ namespace MrByte.RWX.Model.Primitive
             this.ComputeNormals();
         }
 
-        /// <summary>
-        /// Gets or sets the width.
-        /// </summary>
-        /// <value>The width.</value>
         [IgnoreDataMember]
         public double Width 
         { 
@@ -121,10 +117,6 @@ namespace MrByte.RWX.Model.Primitive
             set; 
         }
 
-        /// <summary>
-        /// Gets or sets the height.
-        /// </summary>
-        /// <value>The height.</value>
         [IgnoreDataMember]
         public double Height
         {
@@ -132,10 +124,6 @@ namespace MrByte.RWX.Model.Primitive
             set;
         }
 
-        /// <summary>
-        /// Gets or sets the depth.
-        /// </summary>
-        /// <value>The depth.</value>
         [IgnoreDataMember]
         public double Depth
         {

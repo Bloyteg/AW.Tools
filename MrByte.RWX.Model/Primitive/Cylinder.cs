@@ -76,31 +76,15 @@ namespace MrByte.RWX.Model.Primitive
             this.ComputeNormals();
         }
 
-        /// <summary>
-        /// Gets or sets the height.
-        /// </summary>
-        /// <value>The height.</value>
         [IgnoreDataMember]
         public double Height { get; set; }
 
-        /// <summary>
-        /// Gets or sets the bottom radius.
-        /// </summary>
-        /// <value>The bottom radius.</value>
         [IgnoreDataMember]
         public double BottomRadius { get; set; }
 
-        /// <summary>
-        /// Gets or sets the top radius.
-        /// </summary>
-        /// <value>The top radius.</value>
         [IgnoreDataMember]
         public double TopRadius { get; set; }
 
-        /// <summary>
-        /// Gets or sets the sides.
-        /// </summary>
-        /// <value>The sides.</value>
         [IgnoreDataMember]
         public int Sides { get; set; }
     }

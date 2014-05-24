@@ -21,12 +21,6 @@ namespace MrByte.RWX.Model.Components
     [DataContract]
     public class Triangle
     {
-        /// <summary>
-        /// Initializes a new instance of the <see cref="Face"/> class.
-        /// </summary>
-        /// <param name="index0">The index0.</param>
-        /// <param name="index1">The index1.</param>
-        /// <param name="index2">The index2.</param>
         public Triangle(int index0, int index1, int index2)
         {
             Indices = new []
@@ -37,16 +31,9 @@ namespace MrByte.RWX.Model.Components
                           };
         }
 
-        /// <summary>
-        /// Gets or sets the normal.
-        /// </summary>
-        /// <value>The normal.</value>
         [DataMember]
         public Vector3 Normal { get; set; }
 
-        /// <summary>
-        /// Gets the indices.
-        /// </summary>
         [DataMember]
         public int[] Indices { get; private set; }
     }

@@ -20,16 +20,8 @@ namespace MrByte.RWX.Model
 {
     public interface IGeometry
     {
-        /// <summary>
-        /// Gets the vertices.
-        /// </summary>
-        /// <value>The vertices.</value>
         IList<Vertex> Vertices { get; }
 
-        /// <summary>
-        /// Gets the faces.
-        /// </summary>
-        /// <value>The faces.</value>
         ICollection<Face> Faces { get; }
     }
 }

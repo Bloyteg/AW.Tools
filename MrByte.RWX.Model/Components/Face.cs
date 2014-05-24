@@ -21,22 +21,11 @@ namespace MrByte.RWX.Model.Components
     [DataContract]
     public class Face
     {
-        /// <summary>
-        /// Initializes a new instance of the <see cref="Face"/> class.
-        /// Default constructor.
-        /// </summary>
         public Face()
         {
             
         }
 
-        /// <summary>
-        /// Initializes a new instance of the <see cref="Face"/> class.
-        /// Used to construct a triangle face directly.
-        /// </summary>
-        /// <param name="index0">The index0.</param>
-        /// <param name="index1">The index1.</param>
-        /// <param name="index2">The index2.</param>
         public Face(int index0, int index1, int index2)
         {
             Indices = new[] {index0, index1, index2};
@@ -47,33 +36,15 @@ namespace MrByte.RWX.Model.Components
                             };
         }
 
-        /// <summary>
-        /// Gets or sets the material.
-        /// </summary>
-        /// <value>The material.</value>
         [DataMember]
         public int MaterialId { get; set; }
 
-        /// <summary>
-        /// Gets or sets the tag.
-        /// </summary>
-        /// <value>The tag.</value>
         [DataMember]
         public int? Tag { get; set; }
 
-        /// <summary>
-        /// Gets or sets the vertices. Used for retrieving the original indices for wireframe mode.
-        /// </summary>
-        /// <value>The vertices.</value>
         [DataMember]
         public IEnumerable<int> Indices { get; set; }
 
-        /// <summary>
-        /// Gets or sets the triangles.
-        /// </summary>
-        /// <value>
-        /// The triangles.
-        /// </value>
         [DataMember]
         public ICollection<Triangle> Triangles { get; set; }
     }

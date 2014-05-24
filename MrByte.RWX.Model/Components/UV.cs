@@ -20,28 +20,15 @@ namespace MrByte.RWX.Model.Components
     [DataContract]
     public class UV
     {
-        /// <summary>
-        /// Initializes a new instance of the <see cref="UV"/> class.
-        /// </summary>
-        /// <param name="u">The u.</param>
-        /// <param name="v">The v.</param>
         public UV(float u, float v)
         {
             U = u;
             V = v;
         }
 
-        /// <summary>
-        /// Gets or sets the U.
-        /// </summary>
-        /// <value>The U.</value>
         [DataMember]
         public float U { get; private set; }
 
-        /// <summary>
-        /// Gets or sets the V.
-        /// </summary>
-        /// <value>The V.</value>
         [DataMember]
         public float V { get; private set; }
     }

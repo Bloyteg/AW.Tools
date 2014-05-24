@@ -92,24 +92,12 @@ namespace MrByte.RWX.Model.Primitive
             this.ComputeNormals();
         }
 
-        /// <summary>
-        /// Gets or sets the radius.
-        /// </summary>
-        /// <value>The radius.</value>
         [IgnoreDataMember]
         public double Radius { get; set; }
 
-        /// <summary>
-        /// Gets or sets the offset.
-        /// </summary>
-        /// <value>The offset.</value>
         [IgnoreDataMember]
         public double Offset { get; set; }
 
-        /// <summary>
-        /// Gets or sets the sides.
-        /// </summary>
-        /// <value>The sides.</value>
         [IgnoreDataMember]
         public int Sides { get; set; }
     }

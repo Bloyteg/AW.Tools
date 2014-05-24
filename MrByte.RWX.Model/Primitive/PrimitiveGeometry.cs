@@ -34,15 +34,8 @@ namespace MrByte.RWX.Model.Primitive
             Transform = new Matrix4();
         }
 
-        /// <summary>
-        /// Computes the geometry for the primitive type in a derived class.
-        /// </summary>
         protected abstract void ComputeGeometry();
 
-        /// <summary>
-        /// Gets the vertices.
-        /// </summary>
-        /// <value>The vertices.</value>
         [DataMember]
         public IList<Vertex> Vertices
         {
@@ -62,10 +55,6 @@ namespace MrByte.RWX.Model.Primitive
             }
         }
 
-        /// <summary>
-        /// Gets the faces.
-        /// </summary>
-        /// <value>The faces.</value>
         [DataMember]
         public ICollection<Face> Faces
         {
@@ -85,10 +74,6 @@ namespace MrByte.RWX.Model.Primitive
             }
         }
 
-        /// <summary>
-        /// Gets or sets the material.
-        /// </summary>
-        /// <value>The material.</value>
         [DataMember]
         public int MaterialId
         {
@@ -100,13 +85,15 @@ namespace MrByte.RWX.Model.Primitive
             set
             {
                 _materialId = value;
-            
-                if(_faces != null)
+
+                if (_faces == null)
                 {
-                    foreach(var face in _faces)
-                    {
-                        face.MaterialId = _materialId;
-                    }
+                    return;
+                }
+
+                foreach(var face in _faces)
+                {
+                    face.MaterialId = _materialId;
                 }
             }
 

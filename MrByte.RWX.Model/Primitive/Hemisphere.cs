@@ -96,21 +96,9 @@ namespace MrByte.RWX.Model.Primitive
             this.ComputeNormals();
         }
 
-        /// <summary>
-        /// Gets or sets the radius.
-        /// </summary>
-        /// <value>
-        /// The radius.
-        /// </value>
         [IgnoreDataMember]
         public double Radius { get; set; }
 
-        /// <summary>
-        /// Gets or sets the density.
-        /// </summary>
-        /// <value>
-        /// The density.
-        /// </value>
         [IgnoreDataMember]
         public int Density { get; set; }
     }

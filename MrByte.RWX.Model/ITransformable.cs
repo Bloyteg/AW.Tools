@@ -20,10 +20,6 @@ namespace MrByte.RWX.Model
 {
     public interface ITransformable
     {
-        /// <summary>
-        /// Gets or sets the transform.
-        /// </summary>
-        /// <value>The transform.</value>
         [DataMember]
         Matrix4 Transform { get; set; }
     }

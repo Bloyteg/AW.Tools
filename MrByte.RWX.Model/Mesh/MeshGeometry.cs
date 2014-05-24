@@ -20,9 +20,6 @@ using MrByte.RWX.Model.Primitive;
 
 namespace MrByte.RWX.Model.Mesh
 {
-    /// <summary>
-    /// Represents a complex geometry.
-    /// </summary>
     [KnownType(typeof(Block))]
     [KnownType(typeof(Cone))]
     [KnownType(typeof(Cylinder))]
@@ -32,80 +29,64 @@ namespace MrByte.RWX.Model.Mesh
     [DataContract]
     public abstract class MeshGeometry : IGeometry
     {
-        private List<Clump> _children = new List<Clump>();
-        private List<Vertex> _vertices = new List<Vertex>();
-        private List<Face> _faces = new List<Face>();
-        private List<PrimitiveGeometry> _primitives = new List<PrimitiveGeometry>();
-        private List<PrototypeInstance> _prototypeInstances = new List<PrototypeInstance>();
+        private readonly List<Clump> _children;
+        private readonly List<Vertex> _vertices;
+        private readonly List<Face> _faces;
+        private readonly List<PrimitiveGeometry> _primitives;
+        private readonly List<PrototypeInstance> _prototypeInstances;
 
-        /// <summary>
-        /// Gets the children.
-        /// </summary>
-        /// <value>The children.</value>
+        protected MeshGeometry()
+        {
+            _prototypeInstances = new List<PrototypeInstance>();
+            _primitives = new List<PrimitiveGeometry>();
+            _faces = new List<Face>();
+            _vertices = new List<Vertex>();
+            _children = new List<Clump>();
+        }
+
         [DataMember]
         public ICollection<Clump> Children
         {
             get
             {
-                return _children ?? (_children = new List<Clump>());
+                return _children;
             }
         }
 
-        /// <summary>
-        /// Gets the primitives.
-        /// </summary>
-        /// <value>The primitives.</value>
         [DataMember]
         public ICollection<PrimitiveGeometry> Primitives
         {
             get
             {
-                return _primitives ?? (_primitives = new List<PrimitiveGeometry>());
+                return _primitives;
             }
         }
 
-        /// <summary>
-        /// Gets the vertices.
-        /// </summary>
-        /// <value>The vertices.</value>
         [DataMember]
         public IList<Vertex> Vertices
         {
             get
             {
-                return _vertices ?? (_vertices = new List<Vertex>());
+                return _vertices;
             }
         }
 
-        /// <summary>
-        /// Gets the faces.
-        /// </summary>
-        /// <value>The faces.</value>
         [DataMember]
         public ICollection<Face> Faces
         {
             get
             {
-                return _faces ?? (_faces = new List<Face>());
+                return _faces;
             }
         }
 
-        /// <summary>
-        /// Gets or sets a value indicating whether this instance is prelit.
-        /// </summary>
-        /// <value>
-        ///   <c>true</c> if this instance is prelit; otherwise, <c>false</c>.
-        /// </value>
+        [DataMember]
         public bool IsPrelit { get; set; }
 
-        /// <summary>
-        /// Gets the prototype instances.
-        /// </summary>
-        /// <value>The prototype instances.</value>
         [DataMember]
         public IList<PrototypeInstance> PrototypeInstances
         {
-            get { return _prototypeInstances ?? (_prototypeInstances = new List<PrototypeInstance>()); }
+            get { return _prototypeInstances; }
         }
     }
 }

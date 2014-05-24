@@ -45,6 +45,7 @@
   <ItemGroup>
     <Compile Include="Loader.fs" />
     <None Include="Script.fsx" />
+    <Compile Include="AssemblyInfo.fs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\MrByte.FSharp.Helpers\MrByte.FSharp.Helpers.fsproj">

@@ -13,9 +13,7 @@
 // limitations under the License.
 // ========================================================================
 
-using System;
 using System.Collections.Generic;
-using System.IO;
 using System.Linq;
 using System.Runtime.Serialization;
 using MrByte.RWX.Model.Components;
@@ -39,25 +37,18 @@ namespace MrByte.RWX.Model
     [DataContract]
     public class Model
     {
-        private List<Prototype> _prototypes = new List<Prototype>();
-
-        [DataMember(Name="Materials")]
-        private readonly List<Material> _materials = new List<Material>();
-
-        /// <summary>
-        /// Gets the prototypes.
-        /// </summary>
-        /// <value>The prototypes.</value>
-        [DataMember]
-        public IList<Prototype> Prototypes
+        public Model()
         {
-            get { return _prototypes ?? (_prototypes = new List<Prototype>()); }
+            Materials = new List<Material>();
+            Prototypes = new List<Prototype>();
         }
 
-        /// <summary>
-        /// Gets or sets the main clump.
-        /// </summary>
-        /// <value>The main clump.</value>
+        [DataMember]
+        public IList<Prototype> Prototypes { get; private set; }
+
+        [DataMember]
+        public IList<Material> Materials { get; private set; }
+
         [DataMember(Name="Clump")]
         public Clump MainClump
         {
@@ -72,121 +63,17 @@ namespace MrByte.RWX.Model
 
         public AxisAlignment AxisAlignment { get; set; }
 
-        /// <summary>
-        /// Adds the material.
-        /// </summary>
-        /// <param name="material">The material.</param>
-        /// <returns>The ID of material.</returns>
         public int AddMaterial(Material material)
         {
-            foreach (var currentMaterial in _materials
+            foreach (var currentMaterial in Materials
                 .Select((currentMaterial, index) => new { Material = currentMaterial, Index = index })
                 .Where(currentMaterial => currentMaterial.Material.GetHashCode() == material.GetHashCode() && currentMaterial.Material == material))
             {
                 return currentMaterial.Index;
             }
 
-            _materials.Add(material);
-            return _materials.Count - 1;
-        }
-
-        /// <summary>
-        /// Gets the material.
-        /// </summary>
-        /// <param name="materialId">The material id.</param>
-        /// <returns></returns>
-        public Material GetMaterial(int materialId)
-        {
-            if (!HasMaterial(materialId))
-            {
-                throw new ArgumentOutOfRangeException("materialId", "The given material id does not exist.");
-            }
-
-            return _materials[materialId];
-        }
-
-        /// <summary>
-        /// Tries to get the material.
-        /// </summary>
-        /// <param name="materialId">The material id.</param>
-        /// <param name="material">The material.</param>
-        /// <returns></returns>
-        public bool TryGetMaterial(int materialId, ref Material material)
-        {
-            if (!HasMaterial(materialId))
-            {
-                return false;
-            }
-
-            material = _materials[materialId];
-            return true;
-        }
-
-        /// <summary>
-        /// Determines whether the specified material id has material.
-        /// </summary>
-        /// <param name="materialId">The material id.</param>
-        /// <returns>
-        ///   <c>true</c> if the specified material id has material; otherwise, <c>false</c>.
-        /// </returns>
-        public bool HasMaterial(int materialId)
-        {
-            return (materialId >= 0) && (materialId < _materials.Count);
-        }
-
-        /// <summary>
-        /// Loads from XML file.
-        /// </summary>
-        /// <param name="filePath">The file path.</param>
-        /// <returns></returns>
-        public static Model LoadFromXmlFile(string filePath)
-        {
-            var serializer = new DataContractSerializer(typeof(Model));
-
-            using (var file = File.OpenRead(filePath))
-            {
-                var result = serializer.ReadObject(file);
-                return result as Model;
-            }
-        }
-
-        /// <summary>
-        /// Loads from stream.
-        /// </summary>
-        /// <param name="stream">The stream.</param>
-        /// <returns></returns>
-        public static Model LoadFromStream(Stream stream)
-        {
-            var serializer = new DataContractSerializer(typeof(Model));
-            var result = serializer.ReadObject(stream);
-            return result as Model;
-        }
-
-        /// <summary>
-        /// Saves to XML file.
-        /// </summary>
-        /// <param name="model">The model.</param>
-        /// <param name="filePath">The file path.</param>
-        public static void SaveToXmlFile(Model model, string filePath)
-        {
-            var serializer = new DataContractSerializer(typeof (Model));
-
-            using (var file = new FileStream(filePath, FileMode.Create))
-            {
-                serializer.WriteObject(file, model);
-            }
-        }
-
-        /// <summary>
-        /// Saves to stream.
-        /// </summary>
-        /// <param name="model">The model.</param>
-        /// <param name="stream">The stream.</param>
-        public static void SaveToStream(Model model, Stream stream)
-        {
-            var serializer = new DataContractSerializer(typeof(Model));
-
-            serializer.WriteObject(stream, model);
+            Materials.Add(material);
+            return Materials.Count - 1;
         }
     }
 }

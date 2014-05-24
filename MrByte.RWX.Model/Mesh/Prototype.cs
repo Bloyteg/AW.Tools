@@ -28,27 +28,12 @@ namespace MrByte.RWX.Model.Mesh
     [DataContract]
     public class PrototypeInstance : ITransformable
     {
-        /// <summary>
-        /// Gets or sets the name.
-        /// </summary>
-        /// <value>The name.</value>
         [DataMember]
         public string Name { get; set; }
 
-        /// <summary>
-        /// Gets or sets the material.
-        /// If null then this has no parent material.
-        /// </summary>
-        /// <value>
-        /// The material.
-        /// </value>
         [DataMember]
         public int MaterialId { get; set; }
 
-        /// <summary>
-        /// Gets or sets the position.
-        /// </summary>
-        /// <value>The position.</value>
         [DataMember]
         public Matrix4 Transform { get; set; }
     }

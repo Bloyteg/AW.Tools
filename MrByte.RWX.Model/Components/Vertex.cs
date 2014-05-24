@@ -21,37 +21,20 @@ namespace MrByte.RWX.Model.Components
     [DataContract]
     public class Vertex
     {
-        private Vector3 _vector = new Vector3();
-
-        /// <summary>
-        /// Gets or sets the position.
-        /// </summary>
-        /// <value>The position.</value>
-        [DataMember]
-        public Vector3 Position
+        public Vertex()
         {
-            get { return _vector; }
-            set { _vector = value; }
+            Position = new Vector3();
         }
 
-        /// <summary>
-        /// Gets or sets the UV.
-        /// </summary>
-        /// <value>The UV.</value>
+        [DataMember]
+        public Vector3 Position { get; set; }
+
         [DataMember]
         public UV UV { get; set; }
 
-        /// <summary>
-        /// Gets or sets the prelight.
-        /// </summary>
-        /// <value>The prelight.</value>
         [DataMember]
         public Color Prelight { get; set; }
 
-        /// <summary>
-        /// Gets or sets the normal.
-        /// </summary>
-        /// <value>The normal.</value>
         [DataMember]
         public Vector3 Normal { get; set; }
     }
