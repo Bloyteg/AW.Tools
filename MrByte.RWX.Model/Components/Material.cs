@@ -64,7 +64,7 @@ namespace MrByte.RWX.Model.Components
         Clamp
     }
 
-    [DataContract]
+    [DataContract, Flags]
     public enum MaterialMode
     {
         [EnumMember]
