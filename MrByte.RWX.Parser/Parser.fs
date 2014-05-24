@@ -124,7 +124,7 @@ module Parser =
     let internal textureModeForeshorten = keyword "foreshorten" >>% TextureModes.Foreshorten
     let internal textureModeFilter = keyword "filter" >>% TextureModes.Filter
     let internal textureModeChoice = choice [ textureModeLit; textureModeForeshorten; textureModeFilter ] 
-    let internal textureModes = keywordPlural "texturemode" >>. (many1 textureModeChoice |>> List.reduce (fun accumulator current -> accumulator ||| current) <|> textureModeNull) |>> TextureMode
+    let internal textureModes = keywordPlural "texturemode" >>. (many1 textureModeChoice |>> List.reduce (|||) <|> textureModeNull) |>> TextureMode
     let internal addTextureMode = keyword "addtexturemode" >>. textureModeChoice |>> AddTextureMode
     let internal removeTextureMode = keyword "removetexturemode" >>. textureModeChoice |>> RemoveTextureMode
 

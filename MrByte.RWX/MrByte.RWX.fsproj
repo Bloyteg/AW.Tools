@@ -52,14 +52,14 @@
       <Project>{b444a528-5062-44e0-9d0b-91f46364b30b}</Project>
       <Private>True</Private>
     </ProjectReference>
-    <ProjectReference Include="..\MrByte.IntermediateModel\MrByte.RWX.Model.csproj">
-      <Name>MrByte.RWX.Model</Name>
-      <Project>{d0de7e74-b546-4bd1-a4ac-f4dc4eb959ad}</Project>
-      <Private>True</Private>
-    </ProjectReference>
     <ProjectReference Include="..\MrByte.Math\MrByte.Math.csproj">
       <Name>MrByte.Math</Name>
       <Project>{b78d3e27-94a6-4d51-9c82-75a3e68ea4ba}</Project>
+      <Private>True</Private>
+    </ProjectReference>
+    <ProjectReference Include="..\MrByte.RWX.Model\MrByte.RWX.Model.csproj">
+      <Name>MrByte.RWX.Model</Name>
+      <Project>{d0de7e74-b546-4bd1-a4ac-f4dc4eb959ad}</Project>
       <Private>True</Private>
     </ProjectReference>
     <ProjectReference Include="..\MrByte.RWX.Parser\MrByte.RWX.Parser.fsproj">
