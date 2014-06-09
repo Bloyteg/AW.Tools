@@ -55,12 +55,16 @@ namespace MrByte.RWX.Model
             get; set;
         }
 
+        [DataMember]
         public bool HasOpacityFix { get; set; }
 
+        [DataMember]
         public bool HasRandomUVs { get; set; }
 
+        [DataMember]
         public bool IsSeamless { get; set; }
 
+        [DataMember]
         public AxisAlignment AxisAlignment { get; set; }
 
         public int AddMaterial(Material material)
