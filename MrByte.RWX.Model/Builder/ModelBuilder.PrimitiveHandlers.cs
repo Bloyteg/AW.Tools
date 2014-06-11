@@ -42,7 +42,7 @@ namespace MrByte.RWX.Model.Builder
                                                     });
         }
 
-        public void AddCone(double radius, double height, int sides)
+        public void AddCone(double height, double radius, int sides)
         {
             PrevalidatePrimitive();
 
